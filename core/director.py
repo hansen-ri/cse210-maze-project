@@ -9,6 +9,9 @@ class Director(arcade.Window, Action.Callback):
         super().__init__(screen_width, screen_height)
         self._scene = None
         
+    def get_scene(self):
+        return self._scene
+
     def direct_scene(self, scene):
         self._scene = scene
     
@@ -16,7 +19,7 @@ class Director(arcade.Window, Action.Callback):
         arcade.start_render()
         self._cue_action(Cue.ON_DRAW, {})
 
-    def on_finished(self, next_scene):
+    def on_finished(self, next_level):
         self._scene = next_scene
     
     def on_key_press(self, key, modifiers):
