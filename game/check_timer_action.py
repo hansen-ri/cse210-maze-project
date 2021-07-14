@@ -7,6 +7,7 @@ class CheckTimerAction(Action):
         super().__init__()
 
     def execute(self, cast, cue, callback):
-        timer = cast.first_actor("timers")
+        pass
+        # timer = cast.first_actor("timers")
  #       timer.tick()
  #       print(timer.get_time())
