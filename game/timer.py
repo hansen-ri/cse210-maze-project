@@ -1,14 +1,53 @@
+"""
+Show a timer on-screen.
+
+If Python and Arcade are installed, this example can be run from the command line with:
+python -m arcade.examples.timer
+"""
+
+import arcade
+
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
 
 
-
-
-class Timer:
+class Timer(arcade.Window):
+    """
+    Main application class.
+    """
 
     def __init__(self):
-        self._ticks = 0
+        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
+        self.total_time = 0.0
 
-    def tick(self):
-        self._ticks += 1
+    def setup(self):
+        """
+        Set up the application.
+        """
+        arcade.set_background_color(arcade.color.BLUE)
+        self.total_time = 0.0
 
-    def get_time(self):
-        return self._ticks / 60
+    def on_draw(self):
+        """ Use this function to draw everything to the screen. """
+
+        # Start the render. This must happen before any drawing
+        # commands. We do NOT need an stop render command.
+        arcade.start_render()
+
+        # Calculate minutes
+        minutes = int(self.total_time) // 60
+
+        # Calculate seconds by using a modulus (remainder)
+        seconds = int(self.total_time) % 60
+
+        # Figure out our output
+        output = f"Time: {minutes:02d}:{seconds:02d}"
+
+        # Output the timer text.
+        arcade.draw_text(output, 600, 480, arcade.color.BLACK, 15)
+
+    def on_update(self, delta_time):
+        """
+        All the logic to move, and the game logic goes here.
+        """
+        self.total_time += delta_time
