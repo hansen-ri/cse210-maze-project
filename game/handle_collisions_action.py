@@ -14,4 +14,8 @@ class HandleCollisionsAction(Action):
             self._finished = True
             # todo: do something useful here instead of printing to console
             print("I made it to the goal!")
+            #Hard code level and increment
+            levels = player.level + 1
+            scene = callback.get_scene()
+            scene.update_level(levels)
             
