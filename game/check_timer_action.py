@@ -8,5 +8,5 @@ class CheckTimerAction(Action):
 
     def execute(self, cast, cue, callback):
         timer = cast.first_actor("timers")
-        timer.tick()
-        print(timer.get_time())
+ #       timer.tick()
+ #       print(timer.get_time())

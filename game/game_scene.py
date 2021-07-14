@@ -44,8 +44,10 @@ class GameScene(Scene):
                     goal = Goal(center_x, center_y)
                     cast.add_actor("goals", goal)
 
-        timer = Timer()
-        cast.add_actor("timers", timer)
+                elif level[row][column] == 4:
+                    timer = Timer(center_x, center_y)
+                    cast.add_actor("timers", timer)
+
 
         # create the script
         control_actors_action = ControlActorsAction()

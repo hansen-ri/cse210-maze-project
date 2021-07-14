@@ -26,3 +26,14 @@ TILE_STONE = arcade.load_texture(f"{TILE_PATH}/stoneCenter.png")
 
 # EXIT TEXTURES
 EXIT_SIGN = arcade.load_texture(":resources:images/tiles/signExit.png")
+
+#TIME CONSTANTS
+TIME_SIZE = 128
+TIME_ROWS = 20
+TIME_COLUMNS = 30
+TIME_TOTAL = 0.0
+
+#TIME DISPLAY
+minutes = int(TIME_TOTAL) // 60
+seconds = int(TIME_TOTAL) % 60
+output = f"Time: {minutes:02d}:{seconds:02d}"

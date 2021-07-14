@@ -1,53 +1,52 @@
-"""
-Show a timer on-screen.
-
-If Python and Arcade are installed, this example can be run from the command line with:
-python -m arcade.examples.timer
-"""
-
 import arcade
+from core.actor import Actor
+from game import constants
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+class Timer(Actor):
+
+        def __init__(self, center_x, center_y):
+                super().__init__()
+                self.center_x = center_x
+                self.center_y = center_y
+                self.scale = constants.TILE_SCALE
+        
+        def draw(self):
+                arcade.draw_text("timer", 100, 100, arcade.color.BLUE, 12)
 
 
-class Timer(arcade.Window):
-    """
-    Main application class.
-    """
 
-    def __init__(self):
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
-        self.total_time = 0.0
 
-    def setup(self):
-        """
-        Set up the application.
-        """
-        arcade.set_background_color(arcade.color.BLUE)
-        self.total_time = 0.0
-
-    def on_draw(self):
-        """ Use this function to draw everything to the screen. """
+#    def __init__(self):
+#        self.total_time = 0.0
+#
+#    def setup(self):
+#        """
+#        Set up the application.
+#        """
+#        arcade.set_background_color(arcade.color.BLUE)
+#        self.total_time = 0.0
+#
+#    def on_draw(self):
+#        """ Use this function to draw everything to the screen. """
 
         # Start the render. This must happen before any drawing
         # commands. We do NOT need an stop render command.
-        arcade.start_render()
+#        arcade.start_render()
 
         # Calculate minutes
-        minutes = int(self.total_time) // 60
+#        minutes = int(self.total_time) // 60
 
         # Calculate seconds by using a modulus (remainder)
-        seconds = int(self.total_time) % 60
+#        seconds = int(self.total_time) % 60
 
         # Figure out our output
-        output = f"Time: {minutes:02d}:{seconds:02d}"
+#        output = f"Time: {minutes:02d}:{seconds:02d}"
 
         # Output the timer text.
-        arcade.draw_text(output, 600, 480, arcade.color.BLACK, 15)
+#        arcade.draw_text(output, 600, 480, arcade.color.BLACK, 15)
 
-    def on_update(self, delta_time):
-        """
-        All the logic to move, and the game logic goes here.
-        """
-        self.total_time += delta_time
+#    def on_update(self, delta_time):
+#        """
+#        All the logic to move, and the game logic goes here.
+#        """
+#        self.total_time += delta_time 
