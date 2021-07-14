@@ -20,6 +20,9 @@ class GameScene(Scene):
 
     def __init__(self, level_number = 1):
         
+        self.update_level(1)
+
+    def update_level(self, level_number):
         # create the cast
         cast = Cast()
         with open(constants.LEVEL_DATA) as json_file:
@@ -43,6 +46,7 @@ class GameScene(Scene):
                 elif level[row][column] == 3:
                     goal = Goal(center_x, center_y)
                     cast.add_actor("goals", goal)
+        
 
                 elif level[row][column] == 4:
                     timer = Timer(center_x, center_y)

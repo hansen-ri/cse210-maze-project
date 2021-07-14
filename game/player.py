@@ -17,6 +17,7 @@ class Player(Actor):
         self.scale = constants.TILE_SCALE
         self._current_frame = 0
         self._texture_index = 0
+        self.level = 1
         
     # def move_left(self):
     #     if not self._is_jumping and not self._is_falling:
