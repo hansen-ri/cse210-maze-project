@@ -11,11 +11,16 @@ class ControlActorsAction(Action):
 
     def execute(self, cast, cue, callback):
         player = cast.first_actor("players")
+        timer = cast.first_actor("timers")
         cue_name = cue.get_name()
         cue_info = cue.get_info()
         key = cue_info["key"]
+        
+
 
         if cue_name == Cue.ON_KEY_PRESS:
+            if not timer.is_ticking():
+                timer.start()
             if key == arcade.key.UP:
                 player.change_y = constants.MOVEMENT_SPEED
             elif key == arcade.key.DOWN:

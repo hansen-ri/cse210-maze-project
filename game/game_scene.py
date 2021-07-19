@@ -43,13 +43,11 @@ class GameScene(Scene):
                     player = Player(center_x, center_y)
                     player.level = level_number
                     cast.add_actor("players", player)
-
                     
                 elif level[row][column] == 3:
                     goal = Goal(center_x, center_y)
                     cast.add_actor("goals", goal)
         
-
                 elif level[row][column] == 4:
                     timer = Timer(center_x, center_y)
                     cast.add_actor("timers", timer)
