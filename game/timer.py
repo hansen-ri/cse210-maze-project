@@ -10,6 +10,7 @@ class Timer(Actor):
                 self.center_y = center_y
                 self.scale = constants.TILE_SCALE
                 self.total_time = 0.0
+                self.ticking = False
         
         def draw(self):
                 minutes = int(self.total_time) // 60
@@ -17,11 +18,28 @@ class Timer(Actor):
                 output = f"Time: {minutes:02d}:{seconds:02d}"
                 arcade.draw_text(output, 10, 10, arcade.color.BLUE, 20)
 
-        def on_update(self, delta_time):
-                """
-                All the logic to move, and the game logic goes here.
-                """
-                self.total_time += delta_time 
+        def start(self):
+                self.ticking = True
+
+        def stop(self):
+                self.ticking = False
+
+        def tick(self):
+                if self.ticking:
+                        self.total_time += 1
+
+        def reset(self):
+                self.ticking = False
+                self.total_time = 0
+
+        def is_ticking(self):
+                return self.ticking
+
+        # def on_update(self, delta_time):
+        #         """
+        #         All the logic to move, and the game logic goes here.
+        #         """
+        #         self.total_time += delta_time 
 
 
 

@@ -19,5 +19,7 @@ class HandleCollisionsAction(Action):
             scene = callback.get_scene()
             scene.update_level(current_level)
             print(player.level)
+            timer = cast.first_actor("timers")
+            timer.stop()
             
             
