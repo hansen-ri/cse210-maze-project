@@ -6,7 +6,7 @@ class Instruction(Actor):
 
     def __init__(self):
         super().__init__()
-     
+    
     def draw(self):
         start_x = constants.CENTER_X
         start_y = constants.SCREEN_HEIGHT - 50
