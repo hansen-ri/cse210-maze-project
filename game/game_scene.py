@@ -9,6 +9,7 @@ from game.goal import Goal
 from game.player import Player
 from game.tile import Tile
 from game.timer import Timer
+from game.label import Label
 from game.handle_collisions_action import HandleCollisionsAction
 from game.control_actors_action import ControlActorsAction
 from game.draw_actors_action import DrawActorsAction
