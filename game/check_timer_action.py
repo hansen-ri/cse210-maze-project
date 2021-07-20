@@ -14,6 +14,7 @@ class CheckTimerAction(Action):
 # 600 = 10 seconds
         if timer.total_time >= 600:
             timer.stop()
+
         # timer = cast.first_actor("timers")
  #       timer.tick()
  #       print(timer.get_time())
