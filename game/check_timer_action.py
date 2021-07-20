@@ -1,4 +1,3 @@
-from game.label import Label
 from core.action import Action
 
 
