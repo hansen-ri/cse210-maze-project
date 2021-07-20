@@ -11,7 +11,6 @@ class DrawActorsAction(Action):
         self._draw_tiles(cast)
         self._draw_goals(cast)
         self._draw_timer(cast)
-        self._draw_label(cast)
         
     def _draw_players(self, cast):
         for player in cast.get_actors("players"):
@@ -28,7 +27,3 @@ class DrawActorsAction(Action):
     def _draw_timer(self, cast):
         for timer in cast.get_actors("timers"):
             timer.draw()
-
-    def _draw_label(self, cast):
-        for label in cast.get_actors("label"):
-            label.draw()
