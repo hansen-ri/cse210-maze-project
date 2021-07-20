@@ -1,8 +1,7 @@
 from core.action import Action
-from game.label import Label
 
 
-class CheckTimerAction(Action,Label):
+class CheckTimerAction(Action):
     
     def __init__(self):
         super().__init__()
@@ -13,9 +12,8 @@ class CheckTimerAction(Action,Label):
         if timer.is_ticking():
             timer.tick()
 # 600 = 10 seconds
-        if timer.total_time >= 900:
+        if timer.total_time >= 600:
             timer.stop()
-            Label()
         # timer = cast.first_actor("timers")
  #       timer.tick()
  #       print(timer.get_time())

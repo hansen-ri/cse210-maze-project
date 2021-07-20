@@ -3,13 +3,12 @@ from core.cast import Cast
 from core.cue import Cue
 from core.scene import Scene
 from core.script import Script
-from game import check_timer_action, constants, label
+from game import check_timer_action, constants
 from game import handle_collisions_action
 from game.goal import Goal
 from game.player import Player
 from game.tile import Tile
 from game.timer import Timer
-from game.label import Label
 from game.handle_collisions_action import HandleCollisionsAction
 from game.control_actors_action import ControlActorsAction
 from game.draw_actors_action import DrawActorsAction
@@ -52,10 +51,6 @@ class GameScene(Scene):
                 elif level[row][column] == 4:
                     timer = Timer(center_x, center_y)
                     cast.add_actor("timers", timer)
-
-                elif level > 1:
-                    label = Label(center_x, center_y)
-                    cast.add_actor("label",label)
 
 
         # create the script
